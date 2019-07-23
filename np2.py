@@ -86,3 +86,9 @@ np.ogrid[0:10:2, 1:10:2]  # [array([[0],[2],[4],[6],[8]]), array([[1, 3, 5, 7, 9
 c = np.array([1. - 2.6j, 2.1 + 3.J, 4. - 3.2j])  # 複素数を要素とするndarrayインスタンスを生成
 c.real  # 実部 array([ 1. ,  2.1,  4. ])
 c.imag  # 虚部 array([-2.6,  3. , -3.2])
+
+import numpy.random as npr
+t0_idx = npr.multinomial(100, [1 / 100.] * 100 , size= 1)
+t0_idx = np.argmax(t0_idx) + nsample
+print(t0_idx)  # 最大値のmaxを返す
+npr.randn(*samp_traj.shape) * noise_std  # 標準正規分布 (平均0, 標準偏差1)
